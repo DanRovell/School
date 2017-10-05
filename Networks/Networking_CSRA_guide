@@ -1,0 +1,23 @@
+create netwrok
+go to routers
+find G X
+interfaces
+add interface
+select subnet
+192.168.Group#.1
+hit submit
+Compute, instances
+launch instances, latech id as instance name + G#
+count 1
+source: instance snapshot
+pick csc450v1
+flavor, small
+network: group #
+go to instance
+hit console
+show only console
+login: group
+pass:4Network$
+
+gateway: 192.168.8.1
+

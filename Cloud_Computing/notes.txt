@@ -1,0 +1,239 @@
+Notes for Cloud Computing
+
+9/12/17--------------------------------------------------------------------------------------------
+
+What is cloud computing?
+-In general, it is network based computing where hardware resources and software are used as services.
+
+-These services are exposed in a scalable or on-demand manner so that the user can use those services and pay for only those services that are used.
+
+-a better term is elasctic computing
+
+-on demand computing is just like getting electricity, we plug wire into socket
+
+-the main reason to adopt cloud computing is TOC(Total Ownership Cost)
+--TOC = Building, Server and network, utility,staff, software
+
+
+Goals of people who want to use Cloud
+
+1)Goal 1 - Cost Control 
+-Many systems have variable demands
+-Batch processing(e.g. New York Times)
+-Websites with peakes
+-Startups with unknown demand
+-Reduce Risk
+-Don't need to buy hardware until you need it
+
+2)Goal 2 - Business Agility
+-More that scalability - Elasticity
+-Scaling back is as important as scaling up
+
+3)Goal 3 - Stick to Our Business
+-Most companies don't want to do system administration
+-Cloud infrastructure help them do it quickly without spending own money/time/resources
+
+Technology aspects
+-Data Center - computing, networking and storage as well as application
+-Manage pools of resources
+-Visualization and provisioning
+-Monitoring and accounting
+-All typical well managed Data center admin jobs
+
+Cloud in the eyes of users
+-Services as Pay as you go
+-no responsibility of managing or upgrading infrastructure
+-Service Usage via browsers or apps
+-Service Level Agreement
+
+Computer Networks vs. Distributed Systems
+
+Computer Network: the independant computers are explicitly visible
+
+Distributed system: existence of multiple independant computers is transparent
+
+9/14/17--------------------------------------------------------------------------------------------
+
+WWW
+-DS application
+-ww resource sharing over internet or intranet
+
+Challenges in DS
+-Due to:
+    -complexity
+    -size
+    -changing technologies
+    -society's dependence
+
+-Challenges posed by DSs
+    -Heterogeneity: varying software and hardware
+        -OSs, networks, computer, program languages, implementations by deifferent developers
+        -standards of protocols, middleware
+        -Heterogeneity and mobile code suppoert
+        ?midterm- what would be a solution to support heterogeneity? standard protocols
+    -Openness
+        -independence of vendors
+        -publishable key interfaces
+        -publishable communication mechanisms
+    -Security
+        -confidentiality(protect against disclosure)
+            -cf, medical records
+        -integrity(protect against alteration and interference)
+            -cf, financial data
+        =>need encryption and knowledge of identity
+            1. Denial of service attacks
+            2. Security of mobile code
+    -Scalability
+        -design of scalable distributed systems
+        -controlling the cost of physical resource(O(n), where n is users)
+            -controlling the perfarmance loss(O(log n), where n is size of the set of data)
+            -preventig software resource running out(IPv4(32 bits)-> IPv6(128 bits))
+            -avoiding performance bottleneck(->DNS)            
+        -scalability Techniques(1)
+            -the difference between servers or clients
+                a)a server or
+                b)a client checks forms as they are being filled
+        -(2)
+            -DNS .com seperation(.co,.us,.jp, etc..)
+    -Fault handling  
+        Ability to continue computation in the presence of failures
+            -detecting failures
+            -Masking failures(hiding failures)
+            -Tolerate failures
+            -Recovery from failures
+            -Redundancy
+    -Concurrency 
+        -Processes execute simultaneously over shared resources
+            -Message Passing
+            -Synchronization
+            -Inter-provess communication(IPC)
+    -Transparency
+        -Concealment of the separated nature of system from user/programmer (app/service) or operators
+        -Network Transparency
+            -Access transparency  Location transparency
+            -log on, email, ... on network
+        -Transparencies
+            -Access Transparency: enables local and remote resources to be accessed using identical operations
+            -Location Transparency: enables resources to be accessed without knowledge of their location
+            -Concurrency Transparency: enables several processes to operate concurrently using shared   
+             resources without interference between them.
+            -Replication: enables multiple instances of resources to be used to increase reliability and 
+             performance without knowledge of the replicas by users or application programmers
+            -Failure: enables the concealment of faults
+            -Mobility(Relocation):
+            -Performance:
+            -Scaling:
+            
+        Summary
+        Goals of Distributed Computing
+            -Resources accessibility
+            -Distribution transparecny
+            -Openness
+            -Scalability:workload, ip addresses
+            -pervasice in society
+            -use a variety of technologies
+            -understanding underlying concepts and issues important to their management, implementation, programming
+
+9/19/17--------------------------------------------------------------------------------------------
+
+2000hrs (MTTF),
+repair time(MTTR) 8 hrs
+total shutdown every 2 months for 4 hrs each
+system availability = 8760/2000 = 4.38
+
+UnPlanned downtime = 5 x 8 = 40 hrs 
+Planned downtime =  [12/2]->6 x 4 = 24 hrs
+                             64 hrs downtime
+(8760-64)/8760 = 99.3% system availability
+
+
+9/21/17--------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

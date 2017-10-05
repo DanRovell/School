@@ -1,0 +1,18 @@
+
+
+FUNCTION FIBONACCI(VAL N);
+    BEGIN
+
+        IF (N <= 2) THEN
+            FIBONACCI := 1
+        ELSE
+            FIBONACCI := CALL FIBONACCI(N-1) + CALL FIBONACCI(N-2);
+    END;
+
+VAR I;
+
+BEGIN
+    FOR I := 1 TO 19 DO
+        WRITE(CALL FIBONACCI(I));
+    WRITELN(CALL FIBONACCI(I));
+END.

@@ -1,0 +1,203 @@
+
+Chapter 6----------------------------------------------------------------------
+
+Binary Search Tree
+-A binary tree in which the nodes have keys from an ordered set has the binary
+ search tree property
+-if the key at each node is greater than all the keys in its left subtree and
+ less than or equal to all keys in its right subtree
+-In this case the binary tree is called a binary search tree
+--An inorder traversal of a binary search tree produces a sorted list of keys.
+
+Hash Table
+-an array H on indexes (hash code)  0, …, h-1
+-hash function maps a key into an integer in the range 0, …, h-1
+-Each entry may contain one or more keys!
+-Closed Address Hashing
+--if hash key gives same number, each hash number is a linked list allowing
+--multiple number at the hash number
+
+-Open Address Hashing
+--if the hash cell corresponding to the hash code is occupied by a different
+--elements, then a sequence of alternative locations for the current element is
+--defined (by rehashing)
+--Rehashing by linear probing
+---rehash(j) = (j+1) mod h
+---where j is the location most recently probed,
+---initially j = i, the hash code for K
+--Rehashing by double hashing
+---rehash(j, d) = (j + d) mod h
+---e.g. d = hashIncr(K) = (2K + 1) mod h
+---computing an odd increment ensures that whole hash table is accessed in the
+---search (provided h is a power of 2)
+
+-Choosing a Hash Function
+--If the key type is integer, hashCode(K) = (a K) mod h(size of array)
+--If the key type is string of characters, treat them as sequence of integers,
+--k1, k2, k3, …, kl, hashCode(K) = (al k1 + al-1 k2 + …+a kl) mod h
+
+-Deletion of a key
+--cannot simply delete the the key and assign the cell to emptyCell // cause
+--problem for retrieval procedure
+--need to assign the cell to a value indicating “obsolete”
+
+Chapter 7----------------------------------------------------------------------
+Directed Graph
+-A directed graph, or digraph, is a pair
+-G = (V, E)
+-where V is a set whose elements are called vertices, and
+-E is a set of ordered pairs of elements of V.
+
+Undirected Graph
+-A undirected graph is a pair
+-G = (V, E)
+-where V is a set whose elements are called vertices, and
+-E is a set of unordered pairs of distinct(pair cannot be same thing(a,a))
+-elements of V.
+
+Weighted Graph
+-A weighted graph is a triple (V, E, W)
+-where (V, E) is a graph (directed or undirected) and
+-W is a function from E into R, the reals (integer or rationals).
+-For an edge e, W(e) is called the weight of e.
+
+Look at Adjacency Matrix in Powerpoint
+Look at Adjacency Lists in Powerpoint
+
+Breadth First Search (Be able to draw out given an example)
+-choose a starting vertex, distance d = 0
+-vertices are visited in order of increasing distance from the starting vertex,
+-examine all edges leading from vertices (at distance d) to adjacent vertices
+-(at distance d+1)
+-then, examine all edges leading from vertices at distance d+1 to distance d+2,
+-and so on,
+-until no new vertex is discovered
+
+Depth First Search (Be able to draw out given an example)
+-choose a starting vertex, distance d = 0
+-vertices are visited in order of increasing distance from the starting vertex,
+-examine One edges leading from vertices (at distance d) to adjacent vertices
+-(at distance d+1)
+-then, examine One edges leading from vertices at distance d+1 to distance d+2,
+-and so on,
+-until no new vertex is discovered, or dead end
+-then, backtrack one distance back up, and try other edges, and so on
+-until finally backtrack to starting vertex, with no more new vertex to be
+-discovered.
+
+Chapter 8----------------------------------------------------------------------
+Greedy Algorithms
+-Making choices in sequence such that
+-each individual choice is best
+--according to some limited “short-term” criterion,
+--that is not too expensive to evaluate
+-once a choice is made, it cannot be undone!
+--even if it becomes evident later that it was a poor choice
+
+Optimization Problems
+-Minimizing the total cost or Maximizing the total benefits
+--Analyze all possible outcomes and find the best, or
+--Make a series of choices whose overall effect is to achieve the optimal.
+
+Minimum Spanning Tree (Given graph, make tree)
+-A spanning tree for a connected, undirected graph, G=(V,E) is
+--a subgraph of G that is
+--an undirected tree and contains
+--all the vertices of G.
+-A minimum spanning tree for a weighted graph is
+--a spanning tree with the minimum weight.
+
+Prim's Minimum Spanning Tree Algorithm
+-Select an arbitrary starting vertex, (the root)branches out from the tree
+-constructed so far by
+--choosing an edge at each iteration
+--attach the edge to the tree
+--that edge has minimum weight among all edges that can be attached
+--add to the tree the vertex associated with the edge
+
+-During the course of the algorithm, vertices are divided into three disjoint
+-categories:
+--Tree vertices: in the tree constructed so far,
+--Fringe vertices: not in the tree, but adjacent to some vertex in the tree,
+--Unseen vertices: all others
+
+Dijkstra's Shortest Path Algorithm
+-Let P be a nonempty path
+-in a weighted graph G=(V,E,W)
+-consisting of k edges xv1,v1v2,....vk-1y (possibly v1=y).
+-The weight of P, denoted as W(P) is
+-the sum of the weights,W(xv1),W(v1v2),...W(vk-1y).
+-If x=y, the empty path is considered to be a path from x to y. The weight of
+-the empty path is zero.
+-If no path between x and y has weight less than W(P),
+-then P is called a shortest path,or minimum-weight path.
+
+Chapter 13---------------------------------------------------------------------
+Abstract Problem
+-We define an abstract problem Q to be
+--a binary relation on
+--a set I of problem instances, and
+--a set S of problem solutions.
+--Q is an element of set I x S
+
+Three Kinds of Problems
+-Decision Problem
+--e.g. Is there a solution better than some given bound?
+-Optimal Value
+--e.g. What is the value of a best possible solution?
+-Optimal Solution
+--e.g. Find a solution that achieves the optimal value.
+
+Encoding
+-An encoding of a set S of abstract objects is
+-a mapping e from S to the set of binary strings.
+
+Concrete Problem
+-a problem whose instance set (and solution set) is the set of binary strings
+
+A concrete problem is polynomial-time solvable
+-if there exists an algorithm to solve it in time O(n^k)
+-for some constant k. (also called polynomially bounded)
+
+P is the class of decision problems that are Polynomially bounded.
+-there exist a deterministic algorithm: with every input, it follows one
+-single path from beginning to end every time.
+
+NP is the class of decision problems for which there is a polynomially bounded
+non-deterministic algorithm.
+-The name NP comes from “Non-deterministic Polynomially bounded.”
+-there exist a non-deterministic algorithm: input sometimes has multiple paths
+-that it can take, can change.
+
+NP is a class of decision problems for which
+-a given proposed solution (called certificate) for
+-a given input
+-can be checked quickly (in polynomial time)
+-to see if it really is a solution.
+A non-deterministic algorithm
+-The non-deterministic “guessing” phase.
+--Some completely arbitrary string s, “proposed solution”
+--each time the algorithm is run the string may differ
+-The deterministic “verifying” phase.
+--a deterministic algorithm takes the input of the problem and the proposed solution s, and
+--return value true or false
+-The output step.
+--If the verifying phase returned true, the algorithm outputs yes. Otherwise,
+--there is no output.
+
+A problem Q is NP-complete(the problem itself is inside NP)
+-if it is in NP and
+-it is NP-hard.
+A problem Q is NP-hard-inside NP-complete so define this if defining NP-complete
+-if every problem in NP is reducible to Q.(Q is most difficult problem in NP)
+
+A problem P is reducible to a problem Q if
+-there exists a polynomial reduction function T such that
+--For every string x,
+--if x is a yes input for P, then T(x) is a yes input for Q
+--if x is a no input for P, then T(x) is a no input for Q.
+--T can be computed in polynomially bounded time.
+
+Bin Packing
+
+Traveling Salesman Problem

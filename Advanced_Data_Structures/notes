@@ -1,0 +1,147 @@
+091316
+For next class: Read analysis of sequential search (Pg 36)
+		-worse case
+		-average case
+
+091516
+same as last class
+
+092016
+Be able to explain whether an algorithm is optimal. Look at powerpoint.
+-if worst case is equal to lower bound, algorithm is optimum
+homework:implement binary search in python using whatever method I choose. Recursive or not.
+-L.sort(): sorts numbers for you
+-len(L): length of array
+-Llow L[0:index]: array from 0 to the index (0 not needed,is default)
+
+092216
+Data Types/Structure:
+-set
+-stack
+-list
+-linked list
+-tree
+homework: read chapter 2
+learn object type: dictionary
+
+092716
+homework:Assume you have an integer list that could be empty of contain something.
+	-Find whether a key is in there or not, return true if in the list, else return false.
+	-With the given intList code.
+	-Make the code a function.
+	-write it out on paper. (just the function)
+
+092616
+homework:implement fibonacci using a while loop, not recursion
+think about keysearch in recursion for quiz
+
+100416
+homework: delete key from intList (see powerpoint for help)
+	-write in recursion format
+
+100616
+midterm: 102016
+test non recursive delete (in powerpoint)
+def seqSearch(E, num, K)
+	seqSearchRec(E, 0, num, K)
+def seqSearchRec(E, index, num, K)
+_
+|
+|
+|
+-
+no IntList
+
+101316
+homework: Design algorithm where number of comparisons is 3n/2 - 2 in order to find max and min of set.
+	-then try to tell someone how your algorithm works, and write it (more sudo code, less wordiness)
+	-set a counter to track performance (count number of comparisons(n))
+	-answer is the tournament method, winner and loser
+
+
+For Studying: Research types of sorts from chapter 4.
+Study power points
+Test Type questions:
+-Describe how different sorts work, with sudo code or verbally.
+	-need to be very specific, no wording like 'where it belongs', describe where it belongs
+-Chapter 1-5
+-write a recursive procedure for something I haven't seen before.
+-write something with IntList
+
+-6 major steps for problem solving
+-analyze the complexity of an algorithm, assume worst case, and analyze average case complexity for seqsearch
+	-worst case as function W(n) = n
+-if he says make code executable, points off for slight syntax errors
+-define big O, big theta, etc
+	-c is constant
+	-N0
+-formal definition of worst case complexity, the equation, and what t(I)is, what is Dn
+-formal definition of average case complexity
+-determine an algorithm is optimal
+-worst case of binary search
+Chapter2
+-def of binary tree, stack, queue, dictionary
+Chapter3
+-recursion
+-convert a procedure with loops to one without loops
+-convert for/while loop to recursion
+-convert recursive to while loop
+Chapter4
+-insertion sort
+	-describe the strategy in sudo code format
+-merge sort
+	-same
+-radix sort
+	-gives example, try to do it, could give characters
+Chapter5
+-learn proof of theorem for 3n/2 -2 comparisons
+
+
+80 = a, and so on by 10
+-----------Mid-Term----------------------------------------------------------------------------------
+
+102716
+ord('a') = get ascii number
+chr(66) = give ascii character
+
+Directed Graph
+v = {a,b,c}
+E = {(a,b),(b,c),(c,b)}
+						(a)-nodes
+						/
+					   /  (a,b)
+G = (V,E)			  /
+					\|/     (b,c)
+				   (b)-------------->(c)
+				   /|\				  |
+					------------------
+							(c,b)
+
+Weighted Graph
+W = (({a,b},42),({b,c},62))
+	42         62
+a---------b---------c
+
+Adjacency Matrix Representation for Undirected graph
+- give the matrix a 1-7 x and y axis
+- if they are connected, the intersection gets a 1
+- else, if its not connected, it gets a 0
+*For Directed graph
+-starting point on y axis
+
+homework: do depth-first, and breadth-first search on drawn graph
+
+NP complete problem: problem is an element of np and (all the problem are reducible to that problem)
+- they are NP hard
+
+
+Final Stuff
+first thing when solving problem with computer is encoding. (creating variables)
+
+
+
+n-1 for min
+n-1 for max
+so 2n-2
+so compare,winner and loser, 2 units of info
+dont get rest, look up

@@ -1,0 +1,15 @@
+VAR N;
+
+PROCEDURE HANOI(VAL N, F,T,U);
+  BEGIN
+    IF N > 0 THEN
+    BEGIN
+      CALL HANOI(N-1, F, U, T);
+      WRITELN( F, T);
+      CALL HANOI(N-1, U, T, F);
+    END
+  END;
+
+BEGIN
+  CALL HANOI(4, 1, 3, 2)
+END.

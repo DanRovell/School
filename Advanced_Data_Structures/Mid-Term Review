@@ -1,0 +1,130 @@
+CHAPTER 1-----------------------------------------------------------------------------------------------
+
+Computer algorithm- detailed step by step method for solving a problem by using a computer
+
+6 steps to solving a problem:
+1.Problem: make sure you understand the problem
+2.Strategy: think of a strategy
+3.Algorithm:
+	-Input: what are your inputs?
+	-Output: what should your output be?
+	-Step: write the algorithm in code
+4.Analysis:
+	-Correctness: is your algorithm correct?
+	-Time and Space: how much time and space does it use?
+	-Optimality: is it the best possible solution?
+5.Implementation:
+6. Verification:
+
+Big O(g): Functions that grow no faster than g
+Big Theta(g): Functions that gow at the same rate as g
+Big Omega(g): Functions that grow at least as fast as g
+
+Worst Case complexity algorithm:
+-W(n) = max{t(I) | I e Dn}
+	-I = and element of Dn
+	-t(I) = number of basic operations performed by the algorithm on input I
+	-Dn = the set of inputs of size n
+
+Average Case Complexity algorithm
+-A(n) = Sum(where I e Dn) Pr(I)t(I)
+-A(n) = Pr(succ)Asucc(n) +Pr(fail)Afail(n)
+	-Pr(I) is the probability that input I occurs
+
+CHAPTER 2-----------------------------------------------------------------------------------------------
+
+Sequential search:
+-worst case: W(n) = n
+-average case:~ n/2
+--A(n) = n(1 – ½ q) + ½ q
+---Let q be the probability that K is in the array
+
+Binary search:
+-worst case: O(log n)
+
+Abstract Data Type
+-identified by as a class
+
+Binary Tree: set of elements called nodes, that is empty or stitisfies:
+-There is a distinguished node r called the root
+-The remaining nodes are divided into two disjoint subsets, L and R, each of which is a binary tree. 
+-L is called the left subtree of T and R is called the right subtree of T.
+-There are at most 2d nodes at depth d of a binary tree.
+
+Stack:A stack is a linear structure in which insertions and deletions are always make at one end, called the top.
+-This updating policy is call last in, first out (LIFO)
+
+Queue:A queue is a linear structure in which
+-all insertions are done at one end, called the rear or back, and 
+-all deletions are done at the other end, called the front.
+-This updating policy is called first in, first out (FIFO)
+
+Dictionary:A dictionary is a general associative storage structure.
+-Items in a dictionary 
+	-have an identifier, and
+	-associated information that needs to be stored and retrieved.
+	-no order implied for identifiers in a dictionary ADT
+
+CHAPTER 3-----------------------------------------------------------------------------------------------
+
+Recurrence Equations vs. Recursive Procedures:
+-Recursive Equations:
+	-defines a function over the natural numbers, say T(n), in terms of its own value at one or more integers smaller than n. 
+	-T(n) is defined inductively.
+	-There are base cases to be defined separately.
+	-Recurrence equation applies for n larger than the base cases
+-Recursive Procedures:
+	-a procedure calls a unique copy of itself
+	-converging to a base case(stopping the recursion)
+
+Converting While loops to recursion:
+-basically use the parameter in hte while loop for recursion
+Convert Recursive to while loop:
+-reverse of above
+
+CHAPTER 4----------------------------------------------------------------------------------------------
+
+Insertion sort:
+-Begin with a sequence E of n elements in arbitrary order
+-Initially assume the sorted segment contains first element
+-Let x be the next element to be inserted in sorted segment, pull x “out of the way”, leaving a vacancy
+-repeatedly compare x to the element just to the left of the vacancy, and as long as x is smaller, move that  element into the vacancy, 
+-else put x in the vacancy,
+-repeat the next element that has not yet examined.
+
+Merge Sort:
+-mergeSort(Element[] E, first, last)
+	if (first < last)
+	int mid = (first+last)/2;
+	mergeSort(E, first, mid);
+	mergeSort(E, mid+1, last);
+	merge(E, first, mid, last);
+	return;
+
+Radix Sort:
+-sort by 1's place
+-sort by 10's place
+-sort by 100's place
+-etc...
+Ex.:
+Original, unsorted list:
+170, 45, 75, 90, 802, 24, 2, 66
+
+Sorting by least significant digit (1s place) gives: [*Notice that we keep 802 before 2, because 802 occurred before 2 in the original list, and similarly for pairs 170 & 90 and 45 & 75.]
+170, 90, 802, 2, 24, 45, 75, 66
+
+Sorting by next digit (10s place) gives: [*Notice that 802 again comes before 2 as 802 comes before 2 in the previous list.]
+802, 2, 24, 45, 66, 170, 75, 90
+
+Sorting by most significant digit (100s place) gives:
+2, 24, 45, 66, 75, 90, 170, 802
+
+CHAPTER 5---------------------------------------------------------------------------------------------
+
+Explain 3n/2 comparisons for min max.
+
+Our algorithm can do at most n/2 comparisons of previously unseen keys and
+we need at least n – 2 additional comparisons
+
+
+
