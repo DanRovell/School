@@ -1,0 +1,8 @@
+Loop:	COPY	#1,@Pointer
+	COPY	#1,@Data
+	ADD	#2,Pointer
+	ADD	#-2, Data	
+	JUMP	Loop	
+Pointer:	DATA	2
+Data:	DATA	-8
+

@@ -1,0 +1,30 @@
+	jump Start
+Trip:	data 0
+	data 0
+	data 0
+	data 0
+	data 0
+	data 0
+	data 0
+	data 0
+	data 0
+Door:	data 0
+Start:	copy #1, @Count
+	add Adder, Count
+	jumpz Start, @Trip
+	jump Shield
+	jump Start 
+Safety:	data 0
+Count:	data -18
+Adder: 	data -3
+Shield:	copy #1, Door
+	copy #1, Door
+	copy #1, Door
+	copy #1, Door
+	copy #1, Door
+	copy #1, Door
+	copy #1, Door
+	copy #1, Door
+	copy #1, Door
+	copy #1, Door
+	jump Start

@@ -1,0 +1,15 @@
+Loop:	COPY	#1,@Data
+	ADD	#-3, Data	
+	JUMPZ	Loop, Trapy
+	JUMP	Wall
+Data:	DATA	-8
+Wall:	COPY	0,1	
+	DATA	0
+	DATA	0
+	DATA	0
+Trapz:	DATA	0
+Trapy:	DATA	0
+Trapx:	DATA	0
+
+
+
